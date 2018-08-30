@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You will need node version `7.6.0` or higher as the cli makes use of `async/await`
+You will need node version `8` or higher
 
 Clone the repository
 
