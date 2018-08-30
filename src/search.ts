@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import getFileList from './getFileList'
-import loadJson from './loadJSON'
+import loadJSON from './loadJSON'
 import print from './print'
 import searchJSON from './searchJSON'
 
@@ -10,16 +10,15 @@ interface SearchOptions {
 }
 
 const search = async (opts: SearchOptions) => {
-  if (!opts || typeof opts.search !== 'string') {
-    console.log(chalk.red('Search term missing'))
-    return
-  }
-
   try {
+    if (!opts || typeof opts.search !== 'string') {
+      throw new Error('Search term missing')
+    }
+
     const fileList = await getFileList(opts.files)
 
     fileList.forEach((path: string) => {
-      const file = loadJson(path)
+      const file = loadJSON(path)
       const items = searchJSON(opts, file)
       print(path, items)
     })

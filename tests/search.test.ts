@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import search from '../src/search'
 
 describe('find', () => {
-  let originalConsole = console.log
+  const originalConsole = console.log
   beforeAll(() => {
     console.log = jest.fn()
   })
@@ -44,8 +44,8 @@ describe('find', () => {
 
   it('should search the files', async () => {
     const asTable = require('as-table').configure({
-      delimiter: chalk.cyan(' | '),
       dash: chalk.cyan('-'),
+      delimiter: chalk.cyan(' | '),
       title: x => chalk.magenta.bold(x),
     })
     const files = './tests/fixtures/*.json'
