@@ -8,6 +8,8 @@
 
 Command line tool to search JSON
 
+[View TypeScript version](https://github.com/eddiemoore/json-search/tree/typescript)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
