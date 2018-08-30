@@ -35,6 +35,10 @@ If you would like to use the cli in any directory, you may install it globally
 $ npm i -g
 ```
 
+## Build
+
+No build step required. 😀
+
 ### Usage
 
 To run the cli in the cloned repositories directory
