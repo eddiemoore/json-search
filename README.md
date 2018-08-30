@@ -35,7 +35,7 @@ If you would like to use the cli in any directory, you may install it globally
 $ npm i -g
 ```
 
-## Build
+### Build
 
 No build step required. 😀
 
