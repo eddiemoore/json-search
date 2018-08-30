@@ -39,7 +39,7 @@
     "prettier": "1.14.2"
   },
   "engines": {
-    "node": ">= 7.6.0"
+    "node": ">= 8.0.0"
   },
   "lint-staged": {
     "**/*.{js,json,md,yml}": [
