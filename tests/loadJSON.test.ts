@@ -1,4 +1,4 @@
-const loadJson = require('../lib/loadJSON')
+import loadJson from '../src/loadJSON'
 
 describe('load json', () => {
   it('should load and parse a json file', () => {

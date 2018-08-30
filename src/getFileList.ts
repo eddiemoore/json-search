@@ -1,11 +1,8 @@
-const util = require('util')
-const glob = util.promisify(require('glob'))
+import * as _glob from 'glob'
+import * as util from 'util'
+const glob = util.promisify(_glob)
 
-/**
- * Get file list from glob
- * @param {string} fileGlob - glob to search
- */
-const getFileList = async fileGlob => {
+const getFileList = async (fileGlob: string) => {
   if (!fileGlob || typeof fileGlob !== 'string') {
     throw new Error('Files glob is missing')
   }
@@ -19,4 +16,4 @@ const getFileList = async fileGlob => {
   return files
 }
 
-module.exports = getFileList
+export default getFileList

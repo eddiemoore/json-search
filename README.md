@@ -37,14 +37,16 @@ $ npm i -g
 
 ### Build
 
-No build step required. 😀
+```bash
+$ npm run build
+```
 
 ### Usage
 
 To run the cli in the cloned repositories directory
 
 ```bash
-$ node index.js -s <search_term> [-f <files_glob>]
+$ node ./lib/index.js -s <search_term> [-f <files_glob>]
 ```
 
 Or if the cli has been installed globally

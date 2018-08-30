@@ -4,12 +4,14 @@
   "description": "Search data in JSON files",
   "main": "./lib/search.js",
   "bin": {
-    "zdsearch": "index.js"
+    "zdsearch": "./lib/index.js"
   },
   "scripts": {
     "precommit": "npm run lint && lint-staged",
+    "build": "tsc",
+    "prepublish": "npm run build",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "keywords": [
     "search",
@@ -31,29 +33,48 @@
     "yargs": "12.0.1"
   },
   "devDependencies": {
-    "eslint": "5.4.0",
-    "eslint-config-prettier": "3.0.1",
+    "@types/glob": "5.0.35",
+    "@types/jest": "23.3.1",
+    "@types/node": "10.9.3",
+    "@types/yargs": "11.1.1",
     "husky": "0.14.3",
     "jest": "23.5.0",
     "lint-staged": "7.2.2",
-    "prettier": "1.14.2"
+    "prettier": "1.14.2",
+    "ts-jest": "23.1.4",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.15.0",
+    "typescript": "3.0.3"
   },
   "engines": {
-    "node": ">= 7.6.0"
+    "node": ">= 8.0.0"
   },
   "lint-staged": {
-    "**/*.{js,json,md,yml}": [
+    "**/*.{ts,js,json,md,yml}": [
       "prettier --write",
       "git add"
     ]
   },
   "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.js",
+      "**/*.ts",
       "!**/node_modules/**",
       "!**/coverage/**",
-      "!**/data/**"
+      "!**/data/**",
+      "!**/lib/**"
     ]
   }
 }

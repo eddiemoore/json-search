@@ -1,5 +1,5 @@
-const chalk = require('chalk')
-const search = require('../lib/search')
+import chalk from 'chalk'
+import search from '../src/search'
 
 describe('find', () => {
   let originalConsole = console.log

@@ -1,4 +1,4 @@
-const searchJSON = require('../lib/searchJSON')
+import searchJSON from '../src/searchJSON'
 
 describe('search json', () => {
   it('should fail when json is not an array or object', done => {

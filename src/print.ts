@@ -1,16 +1,12 @@
-const chalk = require('chalk')
+import chalk from 'chalk'
+
 const asTable = require('as-table').configure({
-  delimiter: chalk.cyan(' | '),
   dash: chalk.cyan('-'),
-  title: x => chalk.magenta.bold(x),
+  delimiter: chalk.cyan(' | '),
+  title: (x: string) => chalk.magenta.bold(x),
 })
 
-/**
- * Print Table
- * @param {string} title
- * @param {Array} items
- */
-const print = (title, items) => {
+const print = (title: string, items: any[]) => {
   console.log(chalk.green(title))
 
   if (items.length === 0) {
@@ -21,4 +17,4 @@ const print = (title, items) => {
   console.log(asTable(items) + '\n')
 }
 
-module.exports = print
+export default print
