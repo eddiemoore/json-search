@@ -28,7 +28,7 @@
   "dependencies": {
     "as-table": "1.0.36",
     "chalk": "2.4.1",
-    "yargs": "12.0.1"
+    "yargs": "16.0.3"
   },
   "devDependencies": {
     "eslint": "5.4.0",
